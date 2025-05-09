@@ -302,7 +302,7 @@ class WalkingResultsPageChart extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(15),
             child: Image.asset(
-              'assets/images/graph_walking.jpeg',
+              'assets/images/graph.png',
               width: double.infinity,
               height: screenHeight * 0.25,
               fit: BoxFit.cover,
