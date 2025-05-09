@@ -1,6 +1,7 @@
 import 'package:fitsync/pages/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class AboutUsPage extends StatelessWidget {
   const AboutUsPage({Key? key}) : super(key: key);
@@ -11,11 +12,20 @@ class AboutUsPage extends StatelessWidget {
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: SvgPicture.asset(
+            'assets/icons/back-arrow.svg', // Path ke file SVG kamu
+            height: 20,
+            width: 20,
+          ),
           onPressed: () {
-            Navigator.pushReplacement(
+            Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(
+                builder:
+                    (context) =>
+                        HomePage(), // Ganti dengan nama halaman utama kamu
+              ),
+              (route) => false,
             );
           },
         ),

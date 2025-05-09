@@ -1,5 +1,4 @@
 import 'package:fitsync/pages/landingPage.dart';
-import 'package:fitsync/pages/walking/walking.dart';
 import 'package:flutter/material.dart';
 
 void main() {
