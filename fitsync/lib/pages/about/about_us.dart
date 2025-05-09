@@ -13,18 +13,14 @@ class AboutUsPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: SvgPicture.asset(
-            'assets/icons/back-arrow.svg', // Path ke file SVG kamu
+            'assets/icons/back-arrow.svg',
             height: 20,
             width: 20,
           ),
           onPressed: () {
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(
-                builder:
-                    (context) =>
-                        HomePage(), // Ganti dengan nama halaman utama kamu
-              ),
+              MaterialPageRoute(builder: (context) => HomePage()),
               (route) => false,
             );
           },

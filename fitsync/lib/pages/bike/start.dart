@@ -1,5 +1,5 @@
 import 'package:fitsync/pages/homepage/homepage.dart';
-import 'package:fitsync/pages/bike/stop.dart'; // Change to the correct stop page for cycling
+import 'package:fitsync/pages/bike/stop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,7 +12,7 @@ class CyclingStart extends StatelessWidget {
       appBar: appBar(context),
       body: Stack(
         children: [
-          const FirstRow(), // maps sebagai background
+          const FirstRow(),
           Positioned(bottom: 0, left: 0, right: 0, child: TargetBoxWidget()),
         ],
       ),

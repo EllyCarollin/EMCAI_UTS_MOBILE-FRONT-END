@@ -24,7 +24,6 @@ class ResultsPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
-          // Scroll biar responsif
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -68,7 +67,6 @@ class ResultsPage extends StatelessWidget {
                 ],
               ),
 
-              // Workout Details
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Container(
@@ -78,10 +76,8 @@ class ResultsPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(
-                    crossAxisAlignment:
-                        CrossAxisAlignment.start, // Semua teks mulai dari kiri
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Workout Details + Icon (sendiri di atas)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -91,8 +87,6 @@ class ResultsPage extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 16),
-
-                      // Workout Duration + Avg Speed (baru muncul)
                       Row(
                         children: [
                           Expanded(
@@ -119,8 +113,6 @@ class ResultsPage extends StatelessWidget {
                       ),
 
                       const SizedBox(height: 20),
-
-                      // Workout Calories + Steps
                       Row(
                         children: [
                           Expanded(
@@ -151,7 +143,6 @@ class ResultsPage extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      // Avg Pace + Total Duration
                       Row(
                         children: [
                           Expanded(
@@ -185,29 +176,22 @@ class ResultsPage extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          // Bagian Map dengan garis bawah
                           Column(
                             children: [
                               Text('Map', style: _titleStyle),
                               Container(
-                                margin: const EdgeInsets.only(
-                                  top: 4,
-                                ), // Jarak antara teks dan garis
-                                height: 2, // Ketebalan garis
-                                width: 40, // Panjang garis
-                                color: Colors.black, // Warna garis
+                                margin: const EdgeInsets.only(top: 4),
+                                height: 2,
+                                width: 40,
+                                color: Colors.black,
                               ),
                             ],
                           ),
 
-                          // Spacer untuk memberikan jarak antara Map dan Chart
-                          const SizedBox(
-                            width: 20,
-                          ), // Menambah jarak antara Map dan Chart
-                          // Bagian Chart
+                          const SizedBox(width: 20),
+
                           GestureDetector(
                             onTap: () {
-                              // Navigasi ke halaman chart saat Chart di-tap
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -217,7 +201,7 @@ class ResultsPage extends StatelessWidget {
                                         distance: distance,
                                         calories: calories,
                                       ),
-                                ), // Ganti dengan halaman chart yang sesuai
+                                ),
                               );
                             },
                             child: Text('Chart', style: _subtitleStyle),
@@ -232,7 +216,7 @@ class ResultsPage extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
-                          'assets/images/cycling.jpg', // contoh map image
+                          'assets/images/cycling.jpg',
                           width: double.infinity,
                           height: screenHeight * 0.25,
                           fit: BoxFit.cover,
@@ -245,7 +229,6 @@ class ResultsPage extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Weather Section
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Container(
@@ -278,7 +261,7 @@ class ResultsPage extends StatelessWidget {
                                 ),
                               ),
                               Image.asset(
-                                'assets/images/weather.png', // Gambar awanmu
+                                'assets/images/weather.png',
                                 width: 20,
                                 height: 20,
                                 fit: BoxFit.contain,
@@ -295,7 +278,7 @@ class ResultsPage extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset(
-                                'assets/images/water.png', // gambar untuk tekanan
+                                'assets/images/water.png',
                                 width: 18,
                                 height: 18,
                               ),
@@ -311,7 +294,7 @@ class ResultsPage extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset(
-                                'assets/images/wind.png', // gambar untuk kecepatan angin
+                                'assets/images/wind.png',
                                 width: 18,
                                 height: 18,
                               ),
@@ -327,7 +310,7 @@ class ResultsPage extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset(
-                                'assets/images/compass.png', // gambar untuk arah angin
+                                'assets/images/compass.png',
                                 width: 18,
                                 height: 18,
                               ),
@@ -347,7 +330,6 @@ class ResultsPage extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Notes Section
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Container(
@@ -359,12 +341,10 @@ class ResultsPage extends StatelessWidget {
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/images/notes.png', // <-- Ganti dengan gambar notes kamu
+                        'assets/images/notes.png',
                         width: 24,
                         height: 24,
-                        color:
-                            Colors
-                                .black54, // kalau mau ikut warna icon sebelumnya
+                        color: Colors.black54,
                       ),
                       const SizedBox(width: 10),
                       const Text(

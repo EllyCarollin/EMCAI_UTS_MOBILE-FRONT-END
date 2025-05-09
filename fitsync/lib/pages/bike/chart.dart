@@ -24,7 +24,6 @@ class ResultsPageChart extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
-          // Scroll biar responsif
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -68,7 +67,6 @@ class ResultsPageChart extends StatelessWidget {
                 ],
               ),
 
-              // Workout Details
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Container(
@@ -78,10 +76,8 @@ class ResultsPageChart extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(
-                    crossAxisAlignment:
-                        CrossAxisAlignment.start, // Semua teks mulai dari kiri
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Workout Details + Icon (sendiri di atas)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -92,7 +88,6 @@ class ResultsPageChart extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
 
-                      // Workout Duration + Avg Speed (baru muncul)
                       Row(
                         children: [
                           Expanded(
@@ -120,7 +115,6 @@ class ResultsPageChart extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      // Workout Calories + Steps
                       Row(
                         children: [
                           Expanded(
@@ -151,7 +145,6 @@ class ResultsPageChart extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      // Avg Pace + Total Duration
                       Row(
                         children: [
                           Expanded(
@@ -172,7 +165,6 @@ class ResultsPageChart extends StatelessWidget {
                 ),
               ),
 
-              // Map / Chart Section
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Container(
@@ -185,12 +177,10 @@ class ResultsPageChart extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          // Bagian Map dengan ukuran teks lebih besar dan tanpa garis bawah
                           Column(
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  // Navigasi ke halaman chart saat Chart di-tap
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -200,7 +190,7 @@ class ResultsPageChart extends StatelessWidget {
                                             distance: distance,
                                             calories: calories,
                                           ),
-                                    ), // Ganti dengan halaman chart yang sesuai
+                                    ),
                                   );
                                 },
                                 child: Text('Map', style: _subtitleStyle),
@@ -208,24 +198,16 @@ class ResultsPageChart extends StatelessWidget {
                             ],
                           ),
 
-                          // Spacer untuk memberikan jarak antara Map dan Chart
-                          const SizedBox(
-                            width: 20,
-                          ), // Menambah jarak antara Map dan Chart
-                          // Bagian Chart dengan garis bawah dan ukuran teks lebih kecil
+                          const SizedBox(width: 20),
+
                           Column(
                             children: [
-                              Text(
-                                'Chart',
-                                style: _titleStyle,
-                              ), // Ukuran font standar untuk Chart
+                              Text('Chart', style: _titleStyle),
                               Container(
-                                margin: const EdgeInsets.only(
-                                  top: 4,
-                                ), // Jarak antara teks dan garis
-                                height: 2, // Ketebalan garis
-                                width: 40, // Panjang garis
-                                color: Colors.black, // Warna garis
+                                margin: const EdgeInsets.only(top: 4),
+                                height: 2,
+                                width: 40,
+                                color: Colors.black,
                               ),
                             ],
                           ),
@@ -239,7 +221,7 @@ class ResultsPageChart extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
-                          'assets/bagan.jpg', // contoh map image
+                          'assets/bagan.jpg',
                           width: double.infinity,
                           height: screenHeight * 0.25,
                           fit: BoxFit.cover,
@@ -252,7 +234,6 @@ class ResultsPageChart extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Weather Section
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Container(
@@ -285,7 +266,7 @@ class ResultsPageChart extends StatelessWidget {
                                 ),
                               ),
                               Image.asset(
-                                'assets/images/weather.png', // Gambar awanmu
+                                'assets/images/weather.png',
                                 width: 20,
                                 height: 20,
                                 fit: BoxFit.contain,
@@ -302,7 +283,7 @@ class ResultsPageChart extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset(
-                                'assets/images/water.png', // gambar untuk tekanan
+                                'assets/images/water.png',
                                 width: 18,
                                 height: 18,
                               ),
@@ -318,7 +299,7 @@ class ResultsPageChart extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset(
-                                'assets/images/wind.png', // gambar untuk kecepatan angin
+                                'assets/images/wind.png',
                                 width: 18,
                                 height: 18,
                               ),
@@ -334,7 +315,7 @@ class ResultsPageChart extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset(
-                                'assets/images/compass.png', // gambar untuk arah angin
+                                'assets/images/compass.png',
                                 width: 18,
                                 height: 18,
                               ),
@@ -354,7 +335,6 @@ class ResultsPageChart extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Notes Section
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Container(
@@ -366,12 +346,10 @@ class ResultsPageChart extends StatelessWidget {
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/images/notes.png', // <-- Ganti dengan gambar notes kamu
+                        'assets/images/notes.png',
                         width: 24,
                         height: 24,
-                        color:
-                            Colors
-                                .black54, // kalau mau ikut warna icon sebelumnya
+                        color: Colors.black54,
                       ),
                       const SizedBox(width: 10),
                       const Text(

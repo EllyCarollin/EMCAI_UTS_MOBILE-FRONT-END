@@ -80,7 +80,7 @@ class _SettingsPageState extends State<SettingsPage> {
         elevation: 0,
         leading: IconButton(
           icon: SvgPicture.asset(
-            'assets/icons/back-arrow.svg', // Path ke file SVG kamu
+            'assets/icons/back-arrow.svg',
             height: 20,
             width: 20,
           ),
