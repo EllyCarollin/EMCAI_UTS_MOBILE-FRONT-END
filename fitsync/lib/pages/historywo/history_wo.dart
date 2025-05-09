@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fitsync/pages/homepage/homepage.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({Key? key}) : super(key: key);
@@ -14,9 +16,21 @@ class HistoryPage extends StatelessWidget {
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: SvgPicture.asset(
+            'assets/icons/back-arrow.svg', // Path ke file SVG kamu
+            height: 20,
+            width: 20,
+          ),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder:
+                    (context) =>
+                        HomePage(), // Ganti dengan nama halaman utama kamu
+              ),
+              (route) => false,
+            );
           },
         ),
         actions: [

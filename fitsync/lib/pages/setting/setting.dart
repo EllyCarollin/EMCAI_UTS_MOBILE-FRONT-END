@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fitsync/pages/homepage/homepage.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -76,7 +78,24 @@ class _SettingsPageState extends State<SettingsPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: const BackButton(color: Colors.black),
+        leading: IconButton(
+          icon: SvgPicture.asset(
+            'assets/icons/back-arrow.svg', // Path ke file SVG kamu
+            height: 20,
+            width: 20,
+          ),
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder:
+                    (context) =>
+                        HomePage(), // Ganti dengan nama halaman utama kamu
+              ),
+              (route) => false,
+            );
+          },
+        ),
         title: const Text(
           "FitSync settings",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
